@@ -1,6 +1,6 @@
 node {
 	def application = "springbootapp"
-	def dockerhubaccountid = "swamguru"
+	def dockerhubaccountid = "himshi"
 	stage('Clone repository') {
 		checkout scm
 	}
@@ -22,6 +22,6 @@ node {
 	
 	stage('Remove old images') {
 		// remove docker pld images
-		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+		sh("sudo docker rmi ${dockerhubaccountid}/${application}:latest -f")
    }
 }
